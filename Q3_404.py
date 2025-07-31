@@ -2,17 +2,18 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/home")
-def home():
+@app.get("/{path:path}")
+def not_found(path: str):
     return """
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Home</title>
+        <title>404 Not Found</title>
     </head>
     <body>
-        <h1>Welcome home!</h1>
+        <h1>404 NOT FOUND</h1>
     </body>
     </html>
-    """, 200
+    """
 
+ 
